@@ -1,6 +1,6 @@
 <header class="fixed top-0 left-0 right-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
     <nav
-        class="mt-4 relative max-w-2xl w-full bg-[#fff]/80 backdrop-blur-md border border-gray-200 rounded-[24px] mx-4 flex flex-wrap md:flex-nowrap items-center justify-between p-1 ps-5 md:ps-6 md:py-0 sm:mx-auto">
+        class="mt-4 relative max-w-2xl w-full bg-[#fff]/80 backdrop-blur-lg border border-gray-200 rounded-[24px] mx-4 flex flex-wrap md:flex-nowrap items-center justify-between p-1 ps-5 md:ps-6 md:py-0 sm:mx-auto">
         <div class="flex items-center">
             <!-- Logo -->
             <a class="flex text-xl items-center justify-start gap-2 md:gap-3 focus:outline-hidden focus:opacity-80"
@@ -40,13 +40,13 @@
             aria-labelledby="hs-pro-pnm-collapse" role="region">
             <div
                 class="flex flex-col md:flex-row items-center md:justify-end gap-4 md:gap-5 mt-3 md:mt-0 py-2 md:py-0 md:ps-7">
-                <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 hover:text-black focus:outline-hidden focus:gray-100 border-transparent text-gray-800/60 transition duration-300"
+                <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 hover:text-black focus:outline-hidden focus:gray-100 border-transparent text-gray-800/80 transition duration-300"
                     href="" aria-current="page">Beranda</a>
-                <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 hover:text-black focus:outline-hidden focus:gray-100 border-transparent text-gray-800/60 transition duration-300"
+                <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 hover:text-black focus:outline-hidden focus:gray-100 border-transparent text-gray-800/80 transition duration-300"
                     href="" aria-current="page">Terbaru</a>
-                <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 hover:text-black focus:outline-hidden focus:gray-100 border-transparent text-gray-800/60 transition duration-300"
+                <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 hover:text-black focus:outline-hidden focus:gray-100 border-transparent text-gray-800/80 transition duration-300"
                     href="" aria-current="page">Katalog</a>
-                    <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 hover:text-black focus:outline-hidden focus:gray-100 border-transparent text-gray-800/60 transition duration-300"
+                    <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 hover:text-black focus:outline-hidden focus:gray-100 border-transparent text-gray-800/80 transition duration-300"
                     href="" aria-current="page">Kontak</a>
             </div>
         </div>
