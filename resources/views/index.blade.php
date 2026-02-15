@@ -17,4 +17,7 @@
 
     {{-- Keunggulan --}}
     <x-keunggulan />
+    
+    {{-- Testimoni --}}
+    <x-testimoni />
 @endsection
