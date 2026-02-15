@@ -41,7 +41,7 @@
             <div
                 class="flex flex-col md:flex-row items-center md:justify-end gap-4 md:gap-5 mt-3 md:mt-0 py-2 md:py-0 md:ps-7">
                 <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 hover:text-black focus:outline-hidden focus:gray-100 border-transparent text-gray-800/80 transition duration-300"
-                    href="" aria-current="page">Beranda</a>
+                    href="/" aria-current="page">Beranda</a>
                 <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 hover:text-black focus:outline-hidden focus:gray-100 border-transparent text-gray-800/80 transition duration-300"
                     href="" aria-current="page">Terbaru</a>
                 <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 hover:text-black focus:outline-hidden focus:gray-100 border-transparent text-gray-800/80 transition duration-300"

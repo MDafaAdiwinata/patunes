@@ -27,7 +27,7 @@
 
 </head>
 
-<body class="font-jakarta">
+<body class="font-jakarta bg-[#F6F6F8]">
 
     @yield('content')
 

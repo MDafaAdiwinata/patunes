@@ -8,4 +8,7 @@
 
     {{-- Galeries --}}
     <x-galeri-product />
+
+    {{-- Card Brand --}}
+    <x-card-brand />
 @endsection
