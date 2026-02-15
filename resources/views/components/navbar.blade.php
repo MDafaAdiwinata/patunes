@@ -1,6 +1,6 @@
-<header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
+<header class="fixed top-0 left-0 right-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
     <nav
-        class="mt-4 relative max-w-2xl w-full bg-[#fff]/60 backdrop-blur-md border border-gray-200 rounded-[24px] mx-4 flex flex-wrap md:flex-nowrap items-center justify-between p-1 ps-5 md:ps-6 md:py-0 sm:mx-auto">
+        class="mt-4 relative max-w-2xl w-full bg-[#fff]/80 backdrop-blur-md border border-gray-200 rounded-[24px] mx-4 flex flex-wrap md:flex-nowrap items-center justify-between p-1 ps-5 md:ps-6 md:py-0 sm:mx-auto">
         <div class="flex items-center">
             <!-- Logo -->
             <a class="flex text-xl items-center justify-start gap-2 md:gap-3 focus:outline-hidden focus:opacity-80"
