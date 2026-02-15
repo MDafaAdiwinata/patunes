@@ -1,7 +1,6 @@
-<div class="container px-4 py-10 sm:px-6 pb-20 lg:px-8 mx-auto">
-    <!-- Title -->
+<div class="container px-6 py-10 sm:px-6 pb-20 lg:px-8 mx-auto">
     <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h2 class="text-2xl font-bold md:text-3xl lg:text-4xl text-[#2a2a2a]">Brand Kami</h2>
+        <h2 class="text-xl font-bold md:text-2xl lg:text-3xl text-[#2a2a2a]">Brand Kami</h2>
     </div>
 
     <!-- Grid -->

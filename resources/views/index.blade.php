@@ -11,4 +11,7 @@
 
     {{-- Card Brand --}}
     <x-card-brand />
+
+    {{-- Card Product --}}
+    <x-card-product />
 @endsection
