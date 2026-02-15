@@ -14,4 +14,7 @@
 
     {{-- Card Product --}}
     <x-card-product />
+
+    {{-- Keunggulan --}}
+    <x-keunggulan />
 @endsection

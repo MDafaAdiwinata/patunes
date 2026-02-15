@@ -1,5 +1,5 @@
 <div class="container px-6 py-10 sm:px-6 lg:px-8 lg:py-20 mx-auto">
-    <h2 class="text-xl font-bold md:text-2xl lg:text-3xl text-[#2a2a2a] text-center mb-14">Produk Terbaru</h2>
+    <h2 class="text-xl font-bold md:text-2xl lg:text-3xl text-[#2a2a2a] text-center mb-6 md:mb-14">Produk Terbaru</h2>
 
     <!-- Grid -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
