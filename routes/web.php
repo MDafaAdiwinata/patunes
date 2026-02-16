@@ -31,6 +31,18 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'admin'])->name('admin.dashboard');
+    Route::get('/kelola-brand', function () {
+        return view('admin.kelola-brand');
+    })->name('admin.kelola-brand');
+    Route::get('/kelola-kategori', function () {
+        return view('admin.kelola-kategori');
+    })->name('admin.kelola-kategori');
+    Route::get('/kelola-produk', function () {
+        return view('admin.kelola-produk');
+    })->name('admin.kelola-produk');
+    Route::get('/kelola-feedback', function () {
+        return view('admin.kelola-feedback');
+    })->name('admin.kelola-feedback');
     // CRUD Products
     // Route::resource('products', ProductController::class);
 });
@@ -38,6 +50,10 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
 // role->user
 Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'user'])->name('user.dashboard');
+
+    Route::get('/wishlist', function () {
+        return view('user.wishlist');
+    })->name('user.wishlist');
 });
 
 Route::middleware('auth')->group(function () {
@@ -46,4 +62,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
