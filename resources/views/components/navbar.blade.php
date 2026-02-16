@@ -12,6 +12,10 @@
         </div>
 
         <div class="flex items-center gap-1 md:order-4 md:ms-4">
+            <a class="w-full sm:w-auto whitespace-nowrap py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-[24px] bg-[#558DBA] border border-transparent text-white hover:bg-[#406c91] focus:outline-hidden focus:bg-[#558DBA] disabled:opacity-50 disabled:pointer-events-none transition duration-30"
+                href="/login">
+                Mulai Eksplor
+            </a>
             <div class="md:hidden">
                 <!-- Toggle Button -->
                 <button type="button"

@@ -14,7 +14,7 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 ">
                 <!-- Informasi Kontak -->
-                <div class="flex items-center justify-center md:w-1/2">
+                <div class="flex items-center justify-center">
                     <img src="/images/mail.png" class="" alt="">
                 </div>
 

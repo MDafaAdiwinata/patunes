@@ -1,7 +1,7 @@
 <footer class="bg-[#2A2A2A]">
     <div class="mx-auto w-full container px-10 py-10">
         <div class="sm:flex sm:items-center sm:justify-between">
-            <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+            <a href="/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
                 <img src="/images/logo-light.webp" class="h-8" alt="Patunes Logo" />
                 <span class="self-center font-fugaz text-2xl text-white mt-1">Patunes</span>
             </a>
@@ -10,13 +10,13 @@
                     <a href="/" class="hover:underline me-4 md:me-6">Beranda</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Terbaru</a>
+                    <a href="/terbaru" class="hover:underline me-4 md:me-6">Terbaru</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Katalog</a>
+                    <a href="/katalog" class="hover:underline me-4 md:me-6">Katalog</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline">Kontak</a>
+                    <a href="/kontak" class="hover:underline">Kontak</a>
                 </li>
             </ul>
         </div>
