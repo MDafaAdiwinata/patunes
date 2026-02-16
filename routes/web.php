@@ -9,6 +9,18 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/terbaru', function () {
+    return view('terbaru');
+});
+
+Route::get('/katalog', function () {
+    return view('katalog');
+});
+
+Route::get('/kontak', function () {
+    return view('kontak');
+});
+
 Route::get('/dashboard', function () {
     $user = Auth::user();
     if ($user->role === 'admin') {
