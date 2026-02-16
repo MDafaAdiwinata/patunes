@@ -1,10 +1,10 @@
 <section>
     <header>
-        <h2 class="text-lg font-medium text-gray-900">
+        <h2 class="text-lg font-medium text-[#151515]">
             {{ __('Informasi Profil') }}
         </h2>
 
-        <p class="mt-1 text-sm text-gray-600">
+        <p class="text-base text-[#151515]/80">
             {{ __("Perbarui informasi profil akun dan alamat email Anda.") }}
         </p>
     </header>
