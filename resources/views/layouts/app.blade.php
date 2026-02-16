@@ -8,6 +8,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    {{-- Website Logo --}}
+    <link rel="icon" type="image/png" href="/images/logo-light.webp" />
+
     <!--  Jakarta Sans Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

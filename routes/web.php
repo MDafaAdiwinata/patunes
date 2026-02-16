@@ -50,6 +50,10 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
 // role->user
 Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'user'])->name('user.dashboard');
+
+    Route::get('/wishlist', function () {
+        return view('user.wishlist');
+    })->name('user.wishlist');
 });
 
 Route::middleware('auth')->group(function () {

@@ -33,6 +33,9 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('user.dashboard')">
                         Dashboard
                     </x-nav-link>
+                    <x-nav-link :href="route('user.wishlist')" :active="request()->routeIs('user.wishlist')">
+                        Wishlist
+                    </x-nav-link>
                 @endif
 
             </div>
@@ -113,6 +116,9 @@
             @else
                 <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                     {{ __('Dashboard') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('user.wishlist')" :active="request()->routeIs('user.wishlist')">
+                    {{ __('Wishlist') }}
                 </x-responsive-nav-link>
             @endif
         </div>
