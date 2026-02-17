@@ -44,7 +44,6 @@
         {{-- Produk Card --}}
         <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 mt-12">
             <!-- Card -->
-
             <div
                 class="flex flex-col p-3 sm:p-5 border border-black/10 bg-[#879AA0]/5 hover:bg-[#879AA0]/0 hover:border-black/40 transition duration-300 hover:scale-105 backdrop-blur-md rounded-2xl sm:rounded-3xl cursor-pointer">
                 <div class="aspect-4/4 overflow-hidden rounded-2xl">
