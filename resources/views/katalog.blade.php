@@ -6,7 +6,7 @@
 
     {{-- Katalog --}}
     <section class="" id="katalog">
-        <div class="container mx-auto px-6 py-24">
+        <div class="container mx-auto px-6 py-24 md:py-32">
             <h1 class="text-xl font-bold md:text-2xl lg:text-3xl text-[#2a2a2a] text-center">Lihat Semua Produk</h1>
 
             {{-- Filter --}}
@@ -89,7 +89,7 @@
                         </div>
                         <div class="mt-12">
                             <a class="py-2 px-3 w-full inline-flex justify-center items-center gap-x-2 text-base md:text-lg font-bold text-nowrap rounded-xl md:rounded-2xl bg-[#4f95ce] border border-transparent text-[#f0f0f0] hover:bg-[#795047] focus:outline-hidden focus:bg-blue-700 transition duration-300 disabled:opacity-50 disabled:pointer-events-none"
-                                href="#">
+                                href="{{ route('katalog.detail', $product->id_product) }}">
                                 Lihat Produk
                             </a>
                         </div>

@@ -37,4 +37,9 @@ class KatalogController extends Controller
 
         return view('katalog', compact('products', 'kategoris', 'brands'));
     }
+
+    public function detail(Product $product)
+    {
+        return view('katalog.detail', compact('product'));
+    }
 }

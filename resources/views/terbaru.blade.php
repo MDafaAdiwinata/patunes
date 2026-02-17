@@ -6,7 +6,7 @@
 
     {{-- Card Produk Terbaru --}}
     <section class="">
-        <div class="container mx-auto px-6 md:px-0 py-24 flex flex-col items-center justify-center">
+        <div class="container mx-auto px-6 md:px-0 py-24 md:py-32 flex flex-col items-center justify-center">
             <h1 class="text-xl font-bold md:text-2xl lg:text-3xl text-[#2a2a2a] text-center">Jelajahi Produk Terbaru</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-12 mt-6 sm:mt-10">
 
@@ -32,7 +32,7 @@
                     </p>
                 @endforelse
             </div>
-            <a href=""
+            <a href="/katalog"
                 class="text-[#151515]/80 text-base md:text-lg hover:underline font-light text-center mt-12">Lihat lebih
                 banyak..</a>
         </div>
