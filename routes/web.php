@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BerandaController;
-use App\Http\Controllers\KatalogController;
+use App\Http\Controllers\LpKatalogController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TerbaruController;
 use Illuminate\Support\Facades\Auth;
@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BerandaController::class, 'index'])->name('index');
 Route::get('/terbaru', [TerbaruController::class, 'index'])->name('terbaru');
-Route::get('/katalog', [KatalogController::class, 'index'])->name('katalog');
-Route::get('katalog/{product}/detail', [KatalogController::class, 'detail'])->name('katalog.detail');
+Route::get('/katalog', [LpKatalogController::class, 'index'])->name('katalog');
+Route::get('katalog/{product}/detail', [LpKatalogController::class, 'detail'])->name('katalog.detail');
 
 Route::get('/kontak', function () {
     return view('kontak');

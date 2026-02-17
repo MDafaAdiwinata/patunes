@@ -7,7 +7,7 @@ use App\Models\Kategori;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class KatalogController extends Controller
+class LpKatalogController extends Controller
 {
     public function index(Request $request)
     {
