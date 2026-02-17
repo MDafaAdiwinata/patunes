@@ -1,7 +1,8 @@
 <x-app-layout>
     <section id="keloa-brand">
         <div class="container mx-auto px-6 md:px-0 py-6 sm:py-12 pb-24">
-            <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-0 w-full border">
+            <div
+                class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-0 w-full border">
                 <h1 class="text-lg sm:text-xl lg:text-2xl text-[#151515] font-semibold">
                     Kelola Data Brand
                 </h1>
@@ -59,7 +60,7 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-black/10 bg-[#fff] transition duration-300">
-                            @foreach ($brands as $brand)
+                            @forelse ($brands as $brand)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#151515]/80">
                                         <img src="{{ $brand->logo
@@ -96,7 +97,14 @@
                                         </form>
                                     </td>
                                 </tr>
-                            @endforeach
+                            @empty
+                                <tr>
+                                    <td colspan="7"
+                                        class="px-6 py-8 text-center text-base font-light text-[#151515]/80">
+                                        Maaf, data kategori belum tersedia.
+                                    </td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

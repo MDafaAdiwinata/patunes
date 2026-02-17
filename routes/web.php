@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LpKatalogController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TerbaruController;
@@ -37,9 +38,14 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
     Route::put('brand/{brand}', [BrandController::class, 'update'])->name('admin.brand.update');
     Route::delete('brand/{brand}', [BrandController::class, 'destroy'])->name('admin.brand.destroy');
 
-    Route::get('/kelola-kategori', function () {
-        return view('admin.kelola-kategori');
-    })->name('admin.kelola-kategori');
+    // CRUD Kelola Kategori
+    Route::get('/kelola-kategori', [KategoriController::class, 'index'])->name('admin.kelola-kategori');
+    Route::get('kategori/create', [KategoriController::class, 'create'])->name('admin.kategori.create');
+    Route::post('kategori', [KategoriController::class, 'store'])->name('kategori.store');
+    Route::get('kategori/{kategori}/edit', [KategoriController::class, 'edit'])->name('admin.kategori.edit');
+    Route::put('kategori/{kategori}', [KategoriController::class, 'update'])->name('admin.kategori.update');
+    Route::delete('kategori/{kategori}', [KategoriController::class, 'destroy'])->name('admin.kategori.destroy');
+
     Route::get('/kelola-produk', function () {
         return view('admin.kelola-produk');
     })->name('admin.kelola-produk');
