@@ -1,17 +1,14 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TerbaruController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/terbaru', function () {
-    return view('terbaru');
-});
+Route::get('/', [BerandaController::class, 'index'])->name('index');
+Route::get('/terbaru', [TerbaruController::class, 'index'])->name('terbaru');
 
 Route::get('/katalog', function () {
     return view('katalog');
