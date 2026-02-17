@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\LpKatalogController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TerbaruController;
@@ -27,9 +28,15 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'admin'])->name('admin.dashboard');
-    Route::get('/kelola-brand', function () {
-        return view('admin.kelola-brand');
-    })->name('admin.kelola-brand');
+
+    // CRUD Kelola Brand
+    Route::get('/kelola-brand', [BrandController::class, 'index'])->name('admin.kelola-brand');
+    Route::get('brand/create', [BrandController::class, 'create'])->name('admin.brand.create');
+    Route::post('brand', [BrandController::class, 'store'])->name('brand.store');
+    Route::get('brand/{brand}/edit', [BrandController::class, 'edit'])->name('admin.brand.edit');
+    Route::put('brand/{brand}', [BrandController::class, 'update'])->name('admin.brand.update');
+    Route::delete('brand/{brand}', [BrandController::class, 'destroy'])->name('admin.brand.destroy');
+
     Route::get('/kelola-kategori', function () {
         return view('admin.kelola-kategori');
     })->name('admin.kelola-kategori');
