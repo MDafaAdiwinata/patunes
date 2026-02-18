@@ -51,8 +51,8 @@
                     href="/terbaru" aria-current="page">Terbaru</a>
                 <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 hover:text-black focus:outline-hidden focus:gray-100 border-transparent {{ request()->is('katalog') ? 'text-black/80 font-semibold md:border-b-2 md:border-[#558DBA]' : 'text-[#2a2a2a]/80' }} transition duration-300"
                     href="/katalog" aria-current="page">Katalog</a>
-                <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 hover:text-black focus:outline-hidden focus:gray-100 border-transparent {{ request()->is('kontak') ? 'text-black/80 font-semibold md:border-b-2 md:border-[#558DBA]' : 'text-[#2a2a2a]/80' }} transition duration-300"
-                    href="/kontak" aria-current="page">Kontak</a>
+                <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 hover:text-black focus:outline-hidden focus:gray-100 border-transparent {{ request()->is('feedback') ? 'text-black/80 font-semibold md:border-b-2 md:border-[#558DBA]' : 'text-[#2a2a2a]/80' }} transition duration-300"
+                    href="/feedback" aria-current="page">Kontak</a>
             </div>
         </div>
     </nav>

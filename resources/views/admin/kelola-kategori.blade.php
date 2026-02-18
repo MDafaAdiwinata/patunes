@@ -32,7 +32,6 @@
                 <x-alert message="{{ session('success') }}" />
             @endif
 
-
             {{-- Table View - Data kategori --}}
             <div class="min-w-full rounded-2xl mt-6">
                 <div
@@ -54,10 +53,10 @@
 
                             @forelse ($kategoris as $kategori)
                                 <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#151515]/60">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#151515]/80">
                                         {{ $kategori->nama }}
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/60">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">
                                         {{ $kategori->deskripsi }}
                                     </td>
                                     <td class="px-6 py-4 flex flex-col justify-end lg:flex-row gap-2 text-end">

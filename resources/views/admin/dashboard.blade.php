@@ -136,7 +136,8 @@
                             <thead class="bg-[#607896]/10">
                                 <tr>
                                     <th scope="col"
-                                        class="px-6 py-3 text-start text-base font-semibold text-[#151515]/80">Gambar</th>
+                                        class="px-6 py-3 text-center text-base font-semibold text-[#151515]/80">Gambar
+                                    </th>
                                     <th scope="col"
                                         class="px-6 py-3 text-start text-base font-semibold text-[#151515]/80">Nama
                                         produk</th>
@@ -154,19 +155,22 @@
                             <tbody class="divide-y divide-black/10">
                                 @foreach ($products as $product)
                                     <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#151515]/60">
-                                            <img src="/images/noimage.png" class="w-40" alt="{{ $product->nama }}">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#151515]/80">
+                                            <img src="{{ $product->gambar
+                                                ? 'https://res.cloudinary.com/dpur2sebv/image/upload/' . $product->gambar
+                                                : 'https://res.cloudinary.com/dpur2sebv/image/upload/v1771304190/noimage_a4ur8u.png' }}"
+                                                class="w-28 mx-auto" alt="{{ $product->nama }}">
                                         </td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/60">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">
                                             {{ $product->nama }}
                                         </td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/60">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">
                                             Rp {{ number_format($product->harga, 0, ',', '.') }}
                                         </td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/60">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">
                                             {{ $product->brand->nama }}
                                         </td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/60">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">
                                             {{ $product->kategori->nama }}
                                         </td>
 

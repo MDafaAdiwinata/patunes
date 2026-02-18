@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\LpKatalogController;
@@ -16,9 +17,8 @@ Route::get('/terbaru', [TerbaruController::class, 'index'])->name('terbaru');
 Route::get('/katalog', [LpKatalogController::class, 'index'])->name('katalog');
 Route::get('katalog/{product}/detail', [LpKatalogController::class, 'detail'])->name('katalog.detail');
 
-Route::get('/kontak', function () {
-    return view('kontak');
-});
+Route::get('feedback', [FeedbackController::class, 'create'])->name('feedback');
+Route::post('feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 
 Route::get('/dashboard', function () {
     $user = Auth::user();
@@ -55,11 +55,9 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
     Route::put('product/{product}', [ProductController::class, 'update'])->name('admin.product.update');
     Route::delete('product/{product}', [ProductController::class, 'destroy'])->name('admin.product.destroy');
 
-    Route::get('/kelola-feedback', function () {
-        return view('admin.kelola-feedback');
-    })->name('admin.kelola-feedback');
-    // CRUD Products
-    // Route::resource('products', ProductController::class);
+    // Feedback
+    Route::get('/kelola-feedback', [FeedbackController::class, 'index'])->name('admin.kelola-feedback');
+    Route::delete('feedback/{feedback}', [FeedbackController::class, 'destroy'])->name('admin.feedback.destroy');
 });
 
 // role->user
