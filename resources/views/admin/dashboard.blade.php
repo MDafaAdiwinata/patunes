@@ -11,8 +11,8 @@
                                 Total Brand
                             </p>
                             <div class="mt-1 flex items-center gap-x-2">
-                                <h3 class="text-2xl sm:text-4xl font-bold text-[#151515]">
-                                    000
+                                <h3 class="text-2xl sm:text-4xl font-bold text-[#151515] mt-2">
+                                    {{ $totalBrand }}
                                 </h3>
                             </div>
                         </div>
@@ -28,7 +28,7 @@
                     </div>
 
                     <a class="py-3 px-4 md:px-5 inline-flex justify-between items-center text-base md:text-lg font-light text-[#2a2a2a]/80 hover:text-[#2a2a2a] transition duration-300 border-t border-gray-200 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 rounded-b-xl"
-                        href="#">
+                        href="/admin/kelola-brand">
                         Lihat Data Brand
                         <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -46,8 +46,8 @@
                                 Total Kategori
                             </p>
                             <div class="mt-1 flex items-center gap-x-2">
-                                <h3 class="text-2xl sm:text-4xl font-bold text-[#151515]">
-                                    000
+                                <h3 class="text-2xl sm:text-4xl font-bold text-[#151515] mt-2">
+                                    {{ $totalKategori }}
                                 </h3>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                     </div>
 
                     <a class="py-3 px-4 md:px-5 inline-flex justify-between items-center text-base md:text-lg font-light text-[#2a2a2a]/80 hover:text-[#2a2a2a] transition duration-300 border-t border-gray-200 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 rounded-b-xl"
-                        href="#">
+                        href="/admin/kelola-kategori">
                         Lihat Data Kategori
                         <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -77,11 +77,11 @@
                     <div class="p-4 md:p-5 flex justify-between gap-x-3">
                         <div>
                             <p class="text-lg md:text-xl font-medium text-[#2a2a2a]/60">
-                                Total Kategori
+                                Total Sepatu
                             </p>
                             <div class="mt-1 flex items-center gap-x-2">
-                                <h3 class="text-2xl sm:text-4xl font-bold text-[#151515]">
-                                    000
+                                <h3 class="text-2xl sm:text-4xl font-bold text-[#151515] mt-2">
+                                    {{ $totalProduct }}
                                 </h3>
                             </div>
                         </div>
@@ -100,8 +100,8 @@
                     </div>
 
                     <a class="py-3 px-4 md:px-5 inline-flex justify-between items-center text-base md:text-lg font-light text-[#2a2a2a]/80 hover:text-[#2a2a2a] transition duration-300 border-t border-gray-200 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 rounded-b-xl"
-                        href="#">
-                        Lihat Data Kategori
+                        href="/admin/kelola-product">
+                        Lihat Data Sepatu
                         <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round">
@@ -113,12 +113,12 @@
 
             <!-- Card Table -->
             <div class="flex flex-col bg-[#fff] border border-black/10 rounded-2xl p-4 md:p-6 mt-8">
-                <div class="flex flex-row items-center gap-4 justify-between mb-6">
+                <div class="flex flex-row items-center gap-4 justify-between mb-6 md:mb-8">
                     <div>
                         <h1 class="text-[#151515] font-semibold text-lg md:text-xl md:mb-1">Produk Terbaru</h1>
                         <p class="font-light text-[#151515]/80 text-base md:text-lg">Produk yang baru di tambahkan</p>
                     </div>
-                    <a href=""
+                    <a href="/admin/kelola-product"
                         class="px-2 sm:px-5 py-2 text-sm lg:text-base font-semibold text-[#151515] rounded-full sm:rounded-xl bg-[#e5e5e5]/50 hover:bg-[#e5e5e5]  transition duration-300">
                         <span class="hidden sm:block">Lihat Semua</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="size-6 block sm:hidden" viewBox="0 0 12 24">
@@ -136,32 +136,46 @@
                             <thead class="bg-[#607896]/10">
                                 <tr>
                                     <th scope="col"
-                                        class="px-6 py-3 text-start text-base font-semibold text-[#151515]/80">Name</th>
-                                    <th scope="col"
-                                        class="px-6 py-3 text-start text-base font-semibold text-[#151515]/80">Age</th>
-                                    <th scope="col"
-                                        class="px-6 py-3 text-start text-base font-semibold text-[#151515]/80">Address
+                                        class="px-6 py-3 text-center text-base font-semibold text-[#151515]/80">Gambar
                                     </th>
                                     <th scope="col"
-                                        class="px-6 py-3 text-start text-base font-semibold text-[#151515]/80">Testing
+                                        class="px-6 py-3 text-start text-base font-semibold text-[#151515]/80">Nama
+                                        produk</th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-start text-base font-semibold text-[#151515]/80">Harga
+                                    </th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-start text-base font-semibold text-[#151515]/80">Brand
+                                    </th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-start text-base font-semibold text-[#151515]/80">Kategori
                                     </th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-black/10">
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#151515]/60">John
-                                        Brown
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/60">45</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/60">New York No. 1
-                                        Lake
-                                        Park
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/60">Lorem ipsum dolor
-                                        sit
-                                        amet.
-                                    </td>
-                                </tr>
+                                @foreach ($products as $product)
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#151515]/80">
+                                            <img src="{{ $product->gambar
+                                                ? 'https://res.cloudinary.com/dpur2sebv/image/upload/' . $product->gambar
+                                                : 'https://res.cloudinary.com/dpur2sebv/image/upload/v1771304190/noimage_a4ur8u.png' }}"
+                                                class="w-28 mx-auto" alt="{{ $product->nama }}">
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">
+                                            {{ $product->nama }}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">
+                                            Rp {{ number_format($product->harga, 0, ',', '.') }}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">
+                                            {{ $product->brand->nama }}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">
+                                            {{ $product->kategori->nama }}
+                                        </td>
+
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

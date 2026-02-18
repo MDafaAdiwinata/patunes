@@ -25,19 +25,28 @@
                         Kirimkan Pesan kepada Kami
                     </h2>
 
-                    <form name="submit-to-google-sheet" action="#" method="POST" class="mt-6 space-y-6">
+                    @if (session()->has('success'))
+                        <x-alert message="{{ session('success') }}" />
+                    @endif
+
+                    <form name="feedback" action="{{ route('feedback.store') }}" method="POST" class="mt-6 space-y-6">
+                        @csrf
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label for="nama" class="text-base font-normal text-[#2a2a2a]">
                                     Nama Lengkap
                                 </label>
-                                <input type="text" placeholder="Nama Lengkap" name="nama" id="nama"
+                                <input type="text" placeholder="Nama Lengkap" name="nama_lengkap" id="nama"
                                     class="w-full px-4 py-2 border border-black/20 rounded-xl focus:outline-none mt-1">
+                                <x-input-error :messages="$errors->get('nama_lengkap')" class="mt-2" />
+
                             </div>
                             <div>
                                 <label for="email" class="text-base font-normal text-[#2a2a2a]">Email</label>
                                 <input type="email" placeholder="Email" name="email" id="email"
                                     class="w-full px-4 py-2 border border-black/20 rounded-xl focus:outline-none mt-1">
+                                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+
                             </div>
                         </div>
 
@@ -45,12 +54,16 @@
                             <label for="subjek" class="text-base font-normal text-[#2a2a2a]">Subjek</label>
                             <input type="text" placeholder="Subjek" name="subjek" id="subjek"
                                 class="w-full px-4 py-2 border border-black/20 rounded-xl focus:outline-none mt-1">
+                            <x-input-error :messages="$errors->get('subjek')" class="mt-2" />
+
                         </div>
 
                         <div>
                             <label for="pesan" class="text-base font-normal text-[#2a2a2a]">Pesan</label>
                             <textarea rows="6" placeholder="Pesan Anda" name="pesan" id="pesan"
                                 class="w-full px-4 py-3 border border-black/20 rounded-xl resize-none focus:outline-none mt-1"></textarea>
+                            <x-input-error :messages="$errors->get('pesan')" class="mt-2" />
+
                         </div>
                         <button type="submit"
                             class="w-full text-base md:text-lg bg-[#607896] hover:bg-[#9bb4d2] text-white font-semibold py-2 rounded-2xl transition duration-300">

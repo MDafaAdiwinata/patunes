@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('tagline', 50);
             $table->text('deskripsi')->nullable();
             $table->string('logo');
+            $table->string('image_public_id')->nullable();
             $table->string('url');
             $table->timestamps();
         });
