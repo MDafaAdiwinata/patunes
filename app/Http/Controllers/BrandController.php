@@ -77,7 +77,7 @@ class BrandController extends Controller
         // Jika upload logo baru
         if ($request->hasFile('logo')) {
 
-            // 🔥 Hapus gambar lama dari Cloudinary (jika ada)
+            // Hapus gambar lama dari Cloudinary (jika ada)
             if ($brand->image_public_id) {
                 Storage::disk('cloudinary')->delete($brand->image_public_id);
             }

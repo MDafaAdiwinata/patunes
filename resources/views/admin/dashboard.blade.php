@@ -100,7 +100,7 @@
                     </div>
 
                     <a class="py-3 px-4 md:px-5 inline-flex justify-between items-center text-base md:text-lg font-light text-[#2a2a2a]/80 hover:text-[#2a2a2a] transition duration-300 border-t border-gray-200 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 rounded-b-xl"
-                        href="/admin/kelola-produk">
+                        href="/admin/kelola-product">
                         Lihat Data Sepatu
                         <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -118,7 +118,7 @@
                         <h1 class="text-[#151515] font-semibold text-lg md:text-xl md:mb-1">Produk Terbaru</h1>
                         <p class="font-light text-[#151515]/80 text-base md:text-lg">Produk yang baru di tambahkan</p>
                     </div>
-                    <a href="/admin/kelola-produk"
+                    <a href="/admin/kelola-product"
                         class="px-2 sm:px-5 py-2 text-sm lg:text-base font-semibold text-[#151515] rounded-full sm:rounded-xl bg-[#e5e5e5]/50 hover:bg-[#e5e5e5]  transition duration-300">
                         <span class="hidden sm:block">Lihat Semua</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="size-6 block sm:hidden" viewBox="0 0 12 24">

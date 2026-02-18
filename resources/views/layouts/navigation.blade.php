@@ -23,7 +23,7 @@
                     <x-nav-link :href="route('admin.kelola-kategori')" :active="request()->routeIs('admin.kelola-kategori')">
                         Kategori
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.kelola-produk')" :active="request()->routeIs('admin.kelola-produk')">
+                    <x-nav-link :href="route('admin.kelola-product')" :active="request()->routeIs('admin.kelola-product')">
                         Produk
                     </x-nav-link>
                     <x-nav-link :href="route('admin.kelola-feedback')" :active="request()->routeIs('admin.kelola-feedback')">
@@ -110,7 +110,7 @@
                 <x-responsive-nav-link :href="route('admin.kelola-kategori')" :active="request()->routeIs('admin.kelola-kategori')">
                     {{ __('Kategori') }}
                 </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('admin.kelola-produk')" :active="request()->routeIs('admin.kelola-produk')">
+                <x-responsive-nav-link :href="route('admin.kelola-product')" :active="request()->routeIs('admin.kelola-product')">
                     {{ __('Produk') }}
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('admin.kelola-feedback')" :active="request()->routeIs('admin.kelola-feedback')">
