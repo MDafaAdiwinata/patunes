@@ -27,6 +27,40 @@ class ProductController extends Controller
         return view('admin.kelola-product', compact('products'));
     }
 
+    public function indexUser(Request $request)
+    {
+        $query = Product::query();
+
+        if ($request->filled('search')) {
+            $query->where(function ($q) use ($request) {
+                $q->where('nama', 'like', '%' . $request->search . '%')
+                    ->orWhere('harga', 'like', '%' . $request->search . '%');
+            });
+        }
+
+
+        // Filter kategori
+        if ($request->filled('kategori')) {
+            $query->where('id_kategori', $request->kategori);
+        }
+
+        // Filter brand
+        if ($request->filled('brand')) {
+            $query->where('id_kategori', $request->brand);
+        }
+
+        $products   = $query->get();
+        $kategoris  = Kategori::all();
+        $brands     = Brand::all();
+
+        return view('user.user-katalog', compact('products', 'kategoris', 'brands'));
+    }
+
+    public function detail(Product $product)
+    {
+        return view('user.product.detail', compact('product'));
+    }
+
     public function create()
     {
         $brands = Brand::all();

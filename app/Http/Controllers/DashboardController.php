@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use App\Models\Kategori;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -22,6 +24,10 @@ class DashboardController extends Controller
 
     public function user()
     {
-        return view('user.dashboard');
+        /** @var User $user */
+        $user = Auth::user();
+        $query = $user->wishlists();
+        $products  = $query->get()->take(3);
+        return view('user.dashboard', compact('products'));
     }
 }

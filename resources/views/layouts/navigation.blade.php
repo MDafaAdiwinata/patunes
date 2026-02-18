@@ -33,8 +33,8 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('user.dashboard')">
                         Dashboard
                     </x-nav-link>
-                    <x-nav-link :href="route('user.katalog')" :active="request()->routeIs('user.katalog')">
-                        Daftar Produk
+                    <x-nav-link :href="route('user.user-katalog')" :active="request()->routeIs('user.user-katalog')">
+                        Daftar Sepatu
                     </x-nav-link>
                     <x-nav-link :href="route('user.wishlist')" :active="request()->routeIs('user.wishlist')">
                         Wishlist
@@ -120,8 +120,8 @@
                 <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                     {{ __('Dashboard') }}
                 </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('user.katalog')" :active="request()->routeIs('user.katalog')">
-                    {{ __('Daftar Produk') }}
+                <x-responsive-nav-link :href="route('user.user-katalog')" :active="request()->routeIs('user.user-katalog')">
+                    {{ __('Daftar Sepatu') }}
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('user.wishlist')" :active="request()->routeIs('user.wishlist')">
                     {{ __('Wishlist') }}

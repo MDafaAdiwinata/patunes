@@ -1,16 +1,12 @@
-@extends('layouts.landing')
-
-@section('content')
-    {{-- navbar --}}
-    <x-navbar />
-
+<x-app-layout>
     <section id="detail" class="lg:h-screen">
-        <div class="container mx-auto px-6 md:px-0 py-24 md:py-20 flex flex-col">
+        <div class="container mx-auto px-6 md:px-0 py-6 flex flex-col">
             <div class="grid grid-cols-2 gap-4 sm:mt-4 items-center justify-center mb-6 md:mb-12">
                 <div class="flex items-center justify-start mx-auto w-full lg:w-4/5">
-                    <a href="/katalog"
+                    <a href="/user/user-katalog"
                         class="p-2 font-semibold text-[#151515] rounded-2xl bg-[#eee] hover:bg-[#ddd] border border-black/10 hover:border-black/30 transition duration-300 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="size-6 md:size-8 -rotate-90 text-[#2a2a2a]" viewBox="0 0 24 24">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="size-6 md:size-8 -rotate-90 text-[#2a2a2a]"
+                            viewBox="0 0 24 24">
                             <path fill="currentColor"
                                 d="M12.884 5.116a1.253 1.253 0 0 0-1.768 0l-5 5a1.25 1.25 0 0 0 1.768 1.768l2.866-2.866V18a1.25 1.25 0 1 0 2.5 0V9.018l2.866 2.866a1.25 1.25 0 1 0 1.768-1.768z" />
                         </svg>
@@ -24,9 +20,13 @@
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 xl:gap-4 items-center justify-center">
                 <div class="flex items-center justify-center mx-auto w-full">
-                    <img src="/images/noimage.png" class="w-full lg:w-4/5" alt="">
+                    <img src="{{ $product->gambar
+                        ? 'https://res.cloudinary.com/dpur2sebv/image/upload/' . $product->gambar
+                        : 'https://res.cloudinary.com/dpur2sebv/image/upload/v1771304190/noimage_a4ur8u.png' }}"
+                        class="w-full lg:w-4/5" alt="{{ $product->nama }}">
                 </div>
-                <div class="flex flex-col items-start justify-start gap-2 h-full py-0 sm:py-8 mt-12 lg:mt-0 px-2 md:px-0">
+                <div
+                    class="flex flex-col items-start justify-start gap-2 h-full py-0 sm:py-8 mt-12 lg:mt-0 px-2 md:px-0">
                     <div class="flex flex-row items-center justify-between w-full">
                         <div>
                             <h1 class="text-[#151515] text-lg md:text-xl lg:text-2xl font-bold">
@@ -47,28 +47,25 @@
                     </h1>
                     <p
                         class="text-[#2a2a2a] font-light text-base mt-2 md:mt-4 px-4 md:px-5 py-4  w-full border border-black/10 rounded-xl">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima magnam mollitia ipsum velit sunt id
-                        amet itaque accusantium tempora sapient
+                        {{ $product->deskripsi }}
                     </p>
-                    <div class="col-start-2 text-center ms-auto lg:ms-0">
-                        <div class="hs-tooltip [--placement:auto] inline-block">
-                            <button type="button"
-                                class="hs-tooltip-toggle ms-auto lg:ms-0 px-4 py-2 text-sm lg:text-base font-semibold text-[#f0f0f0] rounded-xl bg-[#5483aa] hover:bg-[#457499] transition duration-300 flex items-center justify-center mt-12">
-                                Wishlist
-                                <span
-                                    class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-[#f0f0f0] border border-black/20 text-base font-medium text-black/80 rounded-lg shadow-2xs"
-                                    role="tooltip">
-                                    Login untuk simpan
-                                </span>
-                            </button>
-                        </div>
-                    </div>
+                    @php
+                        $isWishlisted = auth()
+                            ->user()
+                            ->wishlists()
+                            ->where('product_id', $product->id_product)
+                            ->exists();
+                    @endphp
+
+                    <form action="{{ route('product.wishlist', $product) }}" method="POST" class="ms-auto sm:ms-0">
+                        @csrf
+                        <button type="submit"
+                            class="{{ $isWishlisted ? 'bg-[#d96a6a]' : 'bg-[#6CABDD]' }} text-[#f0f0f0] px-4 py-2 mt-12 font-semibold  rounded-xl">
+                            {{ $isWishlisted ? 'Hapus Wishlist' : 'Wishlist' }}
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-
-
-    {{-- Footer --}}
-    <x-footer-landing />
-@endsection
+</x-app-layout>

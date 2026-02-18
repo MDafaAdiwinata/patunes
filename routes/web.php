@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\LpKatalogController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TerbaruController;
+use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -64,12 +65,11 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
 Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'user'])->name('user.dashboard');
 
-    Route::get('/katalog', function () {
-        return view('user.katalog');
-    })->name('user.katalog');
-    Route::get('/wishlist', function () {
-        return view('user.wishlist');
-    })->name('user.wishlist');
+    Route::get('/user-katalog', [ProductController::class, 'indexUser'])->name('user.user-katalog');
+    Route::get('/wishlist', [WishlistController::class, 'index'])->name('user.wishlist');
+    Route::get('product/{product}/detail', [ProductController::class, 'detail'])->name('product.detail');
+    Route::post('/product/{product}/wishlist', [WishlistController::class, 'toggle'])
+        ->name('product.wishlist');
 });
 
 Route::middleware('auth')->group(function () {

@@ -1,11 +1,11 @@
 <x-app-layout>
-    <section id="wishlist">
+    <section id="katalog">
         <div class="container mx-auto px-6 md:px-0 py-12 pb-24">
-            <h1 class="text-xl font-bold md:text-2xl lg:text-3xl text-[#2a2a2a] text-center">Wishlist Kamu 😯
+            <h1 class="text-xl font-bold md:text-2xl lg:text-3xl text-[#2a2a2a] text-center">Daftar Sepatu 👟
             </h1>
 
             {{-- Filter --}}
-            <form action="{{ route('user.wishlist') }}" method="GET"
+            <form action="{{ route('user.user-katalog') }}" method="GET"
                 class="flex flex-col lg:flex-row items-center justify-center gap-3 mt-10">
                 <div class="grid grid-cols-2 gap-2 md:gap-4 w-full">
                     <div class="w-full">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="w-full ms-0 lg:ms-32 flex items-center justify-center">
-                    <form action="{{ route('user.wishlist') }}" method="GET"
+                    <form action="{{ route('user.user-katalog') }}" method="GET"
                         class="flex items-center w-full sm:w-[350px] md:w-[420px] lg:w-[500px]">
                         <input type="text" id="voice-search"
                             class="border border-black/10 text-[#2a2a2a] text-sm md:text-base rounded-xl focus:ring-transparent focus:border-black/40 block w-full py-2 px-3 ps-3.5"
@@ -63,29 +63,33 @@
                 </div>
             </form>
 
-            {{-- Produk Card - Wishlist --}}
+            {{-- Produk Card --}}
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 mt-12">
                 @forelse ($products as $product)
-                    <div class="group flex flex-col h-full bg-white border border-black/10 shadow-2xs rounded-xl">
-                        <img src="{{ $product->gambar
-                            ? 'https://res.cloudinary.com/dpur2sebv/image/upload/' . $product->gambar
-                            : 'https://res.cloudinary.com/dpur2sebv/image/upload/v1771304190/noimage_a4ur8u.png' }}"
-                            class="w-full h-40 md:h-60 object-cover flex flex-col justify-center items-center rounded-t-xl" />
-                        <div class="p-4 md:p-6">
-                            <span class="block mb-1 text-base md:text-lg font-semibold text-[#3977db]">
-                                {{ $product->kategori->nama }}
-                            </span>
-                            <h3 class="text-xl md:text-2xl font-bold text-[#1a1a1a]">
+                    <div
+                        class="flex flex-col p-3 sm:p-5 border border-black/10 bg-[#FFF] hover:bg-[#f5f5f5] hover:border-black/40 transition duration-300 backdrop-blur-md rounded-2xl sm:rounded-3xl cursor-pointer">
+                        <div class="aspect-4/4 overflow-hidden rounded-2xl">
+                            <img class="size-full object-cover rounded-2xl h-60"
+                                src="{{ $product->gambar
+                                    ? 'https://res.cloudinary.com/dpur2sebv/image/upload/' . $product->gambar
+                                    : 'https://res.cloudinary.com/dpur2sebv/image/upload/v1771304190/noimage_a4ur8u.png' }}"
+                                alt="Product Image">
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="font-semibold text-lg md:text-xl text-[#2a2a2a]/80">
                                 {{ $product->nama }}
                             </h3>
-                            <p class="mt-3 text-[#2a2a2a]/80 font-light">
-                                {{ $product->deskripsi }}
+                            <p class="mt-1 text-xl md:text-2xl font-bold text-[#151515]">
+                                Rp {{ number_format($product->harga, 0, ',', '.') }}
+                            </p>
+                            <p class="mt-2 font-normal text-sm md:text-base text-black/60">
+                                {{ $product->kategori->nama }}
                             </p>
                         </div>
-                        <div class="mt-auto flex border-t border-line-2 divide-x divide-line-2">
-                            <a class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm md:text-base font-medium rounded-b-xl bg-white text-gray-800 shadow-2xs hover:bg-[#ebf7ff] transition duration-300 focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none"
+                        <div class="mt-12">
+                            <a class="py-2 px-3 w-full inline-flex justify-center items-center gap-x-2 text-base md:text-lg font-bold text-nowrap rounded-xl md:rounded-2xl bg-[#4f95ce] border border-transparent text-[#f0f0f0] hover:bg-[#795047] focus:outline-hidden focus:bg-blue-700 transition duration-300 disabled:opacity-50 disabled:pointer-events-none"
                                 href="{{ route('product.detail', $product) }}">
-                                Lihat
+                                Lihat Produk
                             </a>
                         </div>
                     </div>
@@ -95,24 +99,11 @@
             <div class="flex flex-col w-full items-center justify-center border border-black/20 rounded-2xl">
                 <div class="py-20">
                     <p class="text-black/80 text-base md:text-lg">
-                        Kamu belum menambahkan wishlist, tambahin yukk
+                        Maaf produk belum tersedia
                     </p>
-                    <a href="/user/user-katalog"
-                        class="w-fit mx-auto px-4 py-2 text-sm lg:text-base font-semibold text-[#f0f0f0] rounded-xl bg-[#5483aa] hover:bg-[#457499] transition duration-300 flex items-center justify-center mt-4">
-                        Wishlist
-                    </a>
                 </div>
             </div>
             @endforelse
-
-            {{-- Not Available Card/Alert --}}
-            {{-- <div class="flex flex-col w-full items-center justify-center border border-black/10 rounded-2xl">
-            <div class="py-20">
-                <p class="text-black/60 text-base md:text-lg">
-                    Maaf produk belum tersedia
-                </p>
-            </div>
-        </div> --}}
         </div>
     </section>
 </x-app-layout>
