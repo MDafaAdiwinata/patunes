@@ -10,19 +10,19 @@
                         <div class="hs-carousel-slide">
                             <div class="flex justify-center h-full">
                                 <img src="/images/iklan3.png" class="w-full h-full object-cover rounded-2xl"
-                                    alt="">
+                                    alt="Iklan">
                             </div>
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-center h-full">
                                 <img src="/images/iklan2.png" class="w-full h-full object-cover rounded-2xl"
-                                    alt="">
+                                    alt="Iklan">
                             </div>
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-center h-full">
                                 <img src="/images/iklan1.png" class="w-full h-full object-cover rounded-2xl"
-                                    alt="">
+                                    alt="Iklan">
                             </div>
                         </div>
                     </div>
@@ -37,28 +37,41 @@
                     saya</h2>
 
                 {{-- Wishlist Overview --}}
-                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 items-center justify-center mt-4">
-                    <!-- Card -->
-                    <div class="group flex flex-col h-full bg-white border border-black/10 shadow-2xs rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1595309849731-f7ce86eda9fc?q=80&w=1583&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            class="w-full h-40 md:h-60 object-cover flex flex-col justify-center items-center rounded-t-xl" />
-                        <div class="p-4 md:p-6">
-                            <span class="block mb-1 text-base md:text-lg font-semibold text-[#3977db]">
-                                Kategori Product
-                            </span>
-                            <h3 class="text-xl md:text-2xl font-bold text-[#1a1a1a]">
-                                Nama Product
-                            </h3>
-                            <p class="mt-3 text-[#2a2a2a]/80 font-light">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum odio velit nisi
-                                pariatur, ad iure blanditiis rem accusantium rerum illum!
-                            </p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 items-center justify-center mt-4">
+                    @forelse ($products as $product)
+                        <div class="group flex flex-col h-full bg-white border border-black/10 shadow-2xs rounded-xl">
+                            <img src="{{ $product->gambar
+                            ? 'https://res.cloudinary.com/dpur2sebv/image/upload/' . $product->gambar
+                            : 'https://res.cloudinary.com/dpur2sebv/image/upload/v1771304190/noimage_a4ur8u.png' }}"
+                                class="w-full h-40 md:h-60 object-cover flex flex-col justify-center items-center rounded-t-xl" />
+                            <div class="p-4 md:p-6">
+                                <span class="block mb-1 text-base md:text-lg font-semibold text-[#3977db]">
+                                    {{ $product->kategori->nama }}
+                                </span>
+                                <h3 class="text-xl md:text-2xl font-bold text-[#1a1a1a]">
+                                    {{ $product->nama }}
+                                </h3>
+                                <p class="mt-3 text-[#2a2a2a]/80 font-light">
+                                    {{ $product->deskripsi }}
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    @empty
                 </div>
 
-                <a href="/user/wishlist" class="text-[#151515]/80 text-base hover:underline font-light text-center mt-12">Lihat lebih banyak..</a>
+                {{-- Not Available Card/Alert --}}
+                <div class="flex flex-col w-full items-center justify-center border border-black/20 rounded-2xl">
+                    <div class="py-20">
+                        <p class="text-black/80 text-base md:text-lg">
+                            Maaf produk belum tersedia
+                        </p>
+                    </div>
+                </div>
+                @endforelse
             </div>
+            <a href="/user/wishlist"
+                class="text-[#151515]/80 text-base hover:underline font-light text-center mt-6">Lihat lebih
+                banyak..</a>
         </div>
     </section>
 </x-app-layout>

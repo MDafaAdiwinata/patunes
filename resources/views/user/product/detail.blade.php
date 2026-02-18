@@ -49,10 +49,21 @@
                         class="text-[#2a2a2a] font-light text-base mt-2 md:mt-4 px-4 md:px-5 py-4  w-full border border-black/10 rounded-xl">
                         {{ $product->deskripsi }}
                     </p>
-                    <a href="#"
-                        class="ms-auto lg:ms-0 px-4 py-2 text-sm lg:text-base font-semibold text-[#f0f0f0] rounded-xl bg-[#5483aa] hover:bg-[#457499] transition duration-300 flex items-center justify-center mt-12">
-                        Wishlist
-                    </a>
+                    @php
+                        $isWishlisted = auth()
+                            ->user()
+                            ->wishlists()
+                            ->where('product_id', $product->id_product)
+                            ->exists();
+                    @endphp
+
+                    <form action="{{ route('product.wishlist', $product) }}" method="POST" class="ms-auto sm:ms-0">
+                        @csrf
+                        <button type="submit"
+                            class="{{ $isWishlisted ? 'bg-[#d96a6a]' : 'bg-[#6CABDD]' }} text-[#f0f0f0] px-4 py-2 mt-12 font-semibold  rounded-xl">
+                            {{ $isWishlisted ? 'Hapus Wishlist' : 'Wishlist' }}
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

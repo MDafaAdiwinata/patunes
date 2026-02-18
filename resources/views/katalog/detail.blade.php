@@ -50,10 +50,6 @@
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima magnam mollitia ipsum velit sunt id
                         amet itaque accusantium tempora sapient
                     </p>
-                    {{-- <a href="#"
-                        class="ms-auto lg:ms-0 px-4 py-2 text-sm lg:text-base font-semibold text-[#f0f0f0] rounded-xl bg-[#5483aa] hover:bg-[#457499] transition duration-300 flex items-center justify-center mt-12 cursor-not-allowed">
-                        Wishlist
-                    </a> --}}
                     <div class="col-start-2 text-center ms-auto lg:ms-0">
                         <div class="hs-tooltip [--placement:auto] inline-block">
                             <button type="button"
