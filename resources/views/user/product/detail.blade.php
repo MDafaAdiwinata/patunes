@@ -20,9 +20,7 @@
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 xl:gap-4 items-center justify-center">
                 <div class="flex items-center justify-center mx-auto w-full">
-                    <img src="{{ $product->gambar
-                        ? 'https://res.cloudinary.com/dpur2sebv/image/upload/' . $product->gambar
-                        : 'https://res.cloudinary.com/dpur2sebv/image/upload/v1771304190/noimage_a4ur8u.png' }}"
+                    <img src="{{ $product->gambar }}"
                         class="w-full lg:w-4/5" alt="{{ $product->nama }}">
                 </div>
                 <div

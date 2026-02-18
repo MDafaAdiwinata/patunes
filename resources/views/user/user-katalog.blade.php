@@ -70,9 +70,7 @@
                         class="flex flex-col p-3 sm:p-5 border border-black/10 bg-[#FFF] hover:bg-[#f5f5f5] hover:border-black/40 transition duration-300 backdrop-blur-md rounded-2xl sm:rounded-3xl cursor-pointer">
                         <div class="aspect-4/4 overflow-hidden rounded-2xl">
                             <img class="size-full object-cover rounded-2xl h-60"
-                                src="{{ $product->gambar
-                                    ? 'https://res.cloudinary.com/dpur2sebv/image/upload/' . $product->gambar
-                                    : 'https://res.cloudinary.com/dpur2sebv/image/upload/v1771304190/noimage_a4ur8u.png' }}"
+                                src="{{ $product->gambar }}"
                                 alt="Product Image">
                         </div>
                         <div class="pt-4">

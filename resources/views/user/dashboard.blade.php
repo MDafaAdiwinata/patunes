@@ -40,9 +40,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 items-center justify-center mt-4">
                     @forelse ($products as $product)
                         <div class="group flex flex-col h-full bg-white border border-black/10 shadow-2xs rounded-xl">
-                            <img src="{{ $product->gambar
-                            ? 'https://res.cloudinary.com/dpur2sebv/image/upload/' . $product->gambar
-                            : 'https://res.cloudinary.com/dpur2sebv/image/upload/v1771304190/noimage_a4ur8u.png' }}"
+                            <img src="{{ $product->gambar }}"
                                 class="w-full h-40 md:h-60 object-cover flex flex-col justify-center items-center rounded-t-xl" />
                             <div class="p-4 md:p-6">
                                 <span class="block mb-1 text-base md:text-lg font-semibold text-[#3977db]">
@@ -52,7 +50,7 @@
                                     {{ $product->nama }}
                                 </h3>
                                 <p class="mt-3 text-[#2a2a2a]/80 font-light">
-                                    {{ $product->deskripsi }}
+                                    {{ Str::words($product->deskripsi, 5, '...') }}
                                 </p>
                             </div>
                         </div>
@@ -60,13 +58,17 @@
                 </div>
 
                 {{-- Not Available Card/Alert --}}
-                <div class="flex flex-col w-full items-center justify-center border border-black/20 rounded-2xl">
-                    <div class="py-20">
-                        <p class="text-black/80 text-base md:text-lg">
-                            Maaf produk belum tersedia
-                        </p>
-                    </div>
+                <div class="flex flex-col w-full items-center justify-center border border-black/20 rounded-2xl mb-6">
+                <div class="py-20">
+                    <p class="text-black/80 text-base md:text-lg">
+                        Kamu belum menambahkan wishlist, tambahin yukk
+                    </p>
+                    <a href="/user/user-katalog"
+                        class="w-fit mx-auto px-4 py-2 text-sm lg:text-base font-semibold text-[#f0f0f0] rounded-xl bg-[#5483aa] hover:bg-[#457499] transition duration-300 flex items-center justify-center mt-4">
+                        Wishlist
+                    </a>
                 </div>
+            </div>
                 @endforelse
             </div>
             <a href="/user/wishlist"

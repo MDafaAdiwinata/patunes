@@ -46,7 +46,7 @@ class ProductController extends Controller
 
         // Filter brand
         if ($request->filled('brand')) {
-            $query->where('id_kategori', $request->brand);
+            $query->where('id_brand', $request->brand);
         }
 
         $products   = $query->get();

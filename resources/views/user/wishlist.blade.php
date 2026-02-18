@@ -67,9 +67,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 mt-12">
                 @forelse ($products as $product)
                     <div class="group flex flex-col h-full bg-white border border-black/10 shadow-2xs rounded-xl">
-                        <img src="{{ $product->gambar
-                            ? 'https://res.cloudinary.com/dpur2sebv/image/upload/' . $product->gambar
-                            : 'https://res.cloudinary.com/dpur2sebv/image/upload/v1771304190/noimage_a4ur8u.png' }}"
+                        <img src="{{ $product->gambar }}"
                             class="w-full h-40 md:h-60 object-cover flex flex-col justify-center items-center rounded-t-xl" />
                         <div class="p-4 md:p-6">
                             <span class="block mb-1 text-base md:text-lg font-semibold text-[#3977db]">
@@ -79,7 +77,7 @@
                                 {{ $product->nama }}
                             </h3>
                             <p class="mt-3 text-[#2a2a2a]/80 font-light">
-                                {{ $product->deskripsi }}
+                                {{ Str::words($product->deskripsi, 5, '...') }}   
                             </p>
                         </div>
                         <div class="mt-auto flex border-t border-line-2 divide-x divide-line-2">
