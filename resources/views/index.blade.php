@@ -15,71 +15,80 @@
             <h2 class="text-xl font-bold md:text-2xl lg:text-3xl text-[#2a2a2a]">Brand Kami</h2>
         </div>
 
-        <!-- Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        @forelse ($brands as $brand)
+            @if ($loop->first)
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            @endif
 
-            @forelse ($brands as $brand)
-                <div class="flex flex-col rounded-2xl p-4 md:p-6 bg-[#fff] border border-black/10">
-                    <div class="flex items-center gap-x-4">
-                        <img class="rounded-full size-16" src="{{ $brand->logo }}" alt="Avatar">
-                        <div class="grow">
-                            <a href="{{ $brand->url }}"
-                                class="hover:underline font-semibold text-lg md:text-xl text-[#000]" target="_blank">
-                                {{ $brand->nama }}
-                            </a>
-                            <p class="text-base md:text-lg text-[#2a2a2a]/80">
-                                {{ $brand->tagline }}
-                            </p>
-                        </div>
+            <div class="flex flex-col rounded-2xl p-4 md:p-6 bg-[#fff] border border-black/10">
+                <div class="flex items-center gap-x-4">
+                    <img class="rounded-full size-16" src="{{ $brand->logo }}" alt="Avatar">
+                    <div class="grow">
+                        <a href="{{ $brand->url }}" class="hover:underline font-semibold text-lg md:text-xl text-[#000]"
+                            target="_blank">
+                            {{ $brand->nama }}
+                        </a>
+                        <p class="text-base md:text-lg text-[#2a2a2a]/80">
+                            {{ $brand->tagline }}
+                        </p>
                     </div>
-
-                    <p class="mt-4 text-[#2a2a2a]/60 text-base md:text-lg">
-                        {{ Str::words($brand->deskripsi, 20, '...') }}
-                    </p>
                 </div>
+                <p class="mt-4 text-[#2a2a2a]/60 text-base md:text-lg">
+                    {{ Str::words($brand->deskripsi, 20, '...') }}
+                </p>
+            </div>
 
-            @empty
-        </div>
-        <p class="text-center text-lg font-light">
-            Tidak ada brand yang tersedia saat ini.
-        </p>
-        @endforelse
+            @if ($loop->last)
+    </div>
+    @endif
+
+@empty
+    <p class="text-center text-lg font-light">
+        Tidak ada brand yang tersedia saat ini.
+    </p>
+    @endforelse
     </div>
 
     {{-- Card Product --}}
     <div class="container px-6 py-10 sm:px-6 lg:px-8 lg:py-20 mx-auto">
         <h2 class="text-xl font-bold md:text-2xl lg:text-3xl text-[#2a2a2a] text-center mb-6 md:mb-14">Produk Terbaru</h2>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            @forelse ($products as $product)
-                <div class="group flex flex-col h-full bg-white border border-black/10 shadow-2xs rounded-xl">
-                    <img src="{{ $product->gambar }}"
-                        class="w-full h-40 md:h-60 object-cover flex flex-col justify-center items-center rounded-t-xl" />
-                    <div class="p-4 md:p-6">
-                        <span class="block mb-1 text-base md:text-lg font-semibold text-[#3977db]">
-                            {{ $product->kategori->nama }}
-                        </span>
-                        <h3 class="text-xl md:text-2xl font-bold text-[#1a1a1a]">
-                            {{ $product->nama }}
-                        </h3>
-                        <p class="mt-3 text-[#2a2a2a]/80 font-light">
-                            {{ Str::words($product->deskripsi, 20, '...') }}
-                        </p>
-                    </div>
-                    <div class="mt-auto flex border-t border-[#2a2a2a]/10">
-                        <a class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm md:text-base font-medium rounded-b-xl bg-white text-gray-800 shadow-2xs hover:bg-[#ebf7ff] transition duration-300 focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none"
-                            href="{{ route('katalog.detail', $product) }}">
-                            Lihat
-                        </a>
-                    </div>
-                </div>
+        @forelse ($products as $product)
+            @if ($loop->first)
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            @endif
 
-            @empty
-        </div>
-        <p class="text-center text-lg font-light">
-            Tidak ada Produk yang tersedia saat ini.
-        </p>
-        @endforelse
+            <div class="group flex flex-col h-full bg-white border border-black/10 shadow-2xs rounded-xl">
+                <img src="{{ $product->gambar }}"
+                    class="w-full h-40 md:h-60 object-cover flex flex-col justify-center items-center rounded-t-xl" />
+                <div class="p-4 md:p-6">
+                    <span class="block mb-1 text-base md:text-lg font-semibold text-[#3977db]">
+                        {{ $product->kategori->nama }}
+                    </span>
+                    <h3 class="text-xl md:text-2xl font-bold text-[#1a1a1a]">
+                        {{ $product->nama }}
+                    </h3>
+                    <p class="mt-3 text-[#2a2a2a]/80 font-light">
+                        {{ Str::words($product->deskripsi, 20, '...') }}
+                    </p>
+                </div>
+                <div class="mt-auto flex border-t border-[#2a2a2a]/10">
+                    <a class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm md:text-base font-medium rounded-b-xl bg-white text-gray-800 shadow-2xs hover:bg-[#ebf7ff] transition duration-300 focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none"
+                        href="{{ route('katalog.detail', $product) }}">
+                        Lihat
+                    </a>
+                </div>
+            </div>
+
+            @if ($loop->last)
+    </div>
+    @endif
+
+@empty
+    <p class="text-center text-lg font-light">
+        Tidak ada Produk yang tersedia saat ini.
+    </p>
+    @endforelse
     </div>
 
     {{-- Keunggulan --}}

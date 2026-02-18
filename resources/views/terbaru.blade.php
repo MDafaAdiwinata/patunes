@@ -12,7 +12,7 @@
 
                 @forelse ($products as $product)
                     <!-- Card -->
-                    <div class="relative bg-white border border-black/10 rounded-xl md:rounded-2xl w-[600px]">
+                    <div class="relative bg-white border border-black/10 rounded-xl md:rounded-2xl w-full xl:w-[600px]">
                         <img class="w-full h-96 object-cover rounded-xl md:rounded-2xl" src="{{ $product->gambar }}">
                         <div class="absolute top-0 start-0 end-0">
                             <div class="p-6">
@@ -31,10 +31,10 @@
                 Tidak ada Data Produk Terbaru yang tersedia saat ini.
             </p>
             @endforelse
-            <a href="/katalog" class="text-[#151515]/80 text-base md:text-lg hover:underline font-light text-center mt-12">Lihat
-            lebih
-            banyak..</a>
         </div>
+        <a href="/katalog" class="text-[#151515]/80 text-base md:text-lg hover:underline font-light text-center mt-12">Lihat
+        lebih
+        banyak..</a>
         
     </section>
 
