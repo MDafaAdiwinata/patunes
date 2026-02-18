@@ -57,7 +57,7 @@
                     </div>
                 </div>
 
-                <a href="" class="text-[#151515]/80 text-base hover:underline font-light text-center mt-12">Lihat lebih banyak..</a>
+                <a href="/user/wishlist" class="text-[#151515]/80 text-base hover:underline font-light text-center mt-12">Lihat lebih banyak..</a>
             </div>
         </div>
     </section>

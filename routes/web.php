@@ -64,9 +64,9 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
 Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'user'])->name('user.dashboard');
 
-    Route::get('/katalog', function () {
-        return view('user.katalog');
-    })->name('user.katalog');
+    Route::get('/user-katalog', [ProductController::class, 'indexUser'])->name('user.user-katalog');
+    Route::get('product/{product}/detail', [ProductController::class, 'detail'])->name('product.detail');
+
     Route::get('/wishlist', function () {
         return view('user.wishlist');
     })->name('user.wishlist');
