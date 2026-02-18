@@ -63,10 +63,8 @@
                             @forelse ($products as $product)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#151515]/80">
-                                        <img src="{{ $product->gambar
-                                            ? 'https://res.cloudinary.com/dpur2sebv/image/upload/' . $product->gambar
-                                            : 'https://res.cloudinary.com/dpur2sebv/image/upload/v1771304190/noimage_a4ur8u.png' }}"
-                                            class="w-28 mx-auto" alt="{{ $product->nama }}">
+                                        <img src="{{ $product->gambar }}" class="w-28 mx-auto"
+                                            alt="{{ $product->nama }}">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">
                                         {{ $product->nama }}
@@ -75,7 +73,7 @@
                                         Rp {{ number_format($product->harga, 0, ',', '.') }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">
-                                        {{ $product->deskripsi }}
+                                        {{ Str::words($product->deskripsi, 5, '...') }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">
                                         {{ $product->brand->nama }}
@@ -105,7 +103,7 @@
                                 <tr>
                                     <td colspan="7"
                                         class="px-6 py-8 text-center text-base font-light text-[#151515]/80">
-                                        Maaf, data kategori belum tersedia.
+                                        Maaf, data produk belum tersedia.
                                     </td>
                                 </tr>
                             @endforelse

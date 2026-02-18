@@ -73,7 +73,7 @@
                         class="flex flex-col p-3 sm:p-5 border border-black/10 bg-[#879AA0]/5 hover:bg-[#879AA0]/0 hover:border-black/40 transition duration-300 hover:scale-105 backdrop-blur-md rounded-2xl sm:rounded-3xl cursor-pointer">
                         <div class="aspect-4/4 overflow-hidden rounded-2xl">
                             <img class="size-full object-cover rounded-2xl h-60"
-                                src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?q=80&w=1412&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                src="{{ $product->gambar }}"
                                 alt="Product Image">
                         </div>
                         <div class="pt-4">

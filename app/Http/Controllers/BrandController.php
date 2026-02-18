@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class BrandController extends Controller
 {
@@ -45,16 +45,19 @@ class BrandController extends Controller
             'deskripsi' => 'required',
             'logo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
+        
         // upload ke cloudinary
         if ($request->hasFile('logo')) {
 
-            $path = Storage::disk('cloudinary')->put(
-                'brands',
-                $request->file('logo')
+            $uploadedFile = Cloudinary::uploadApi()->upload(
+                $request->file('logo')->getRealPath(),
+                [
+                    'folder' => 'brands'
+                ]
             );
 
-            $validated['logo'] = $path;
-            $validated['image_public_id'] = $path;
+            $validated['logo'] = $uploadedFile['secure_url'];
+            $validated['image_public_id'] = $uploadedFile['public_id'];
         }
 
         Brand::create($validated);
@@ -77,19 +80,21 @@ class BrandController extends Controller
         // Jika upload logo baru
         if ($request->hasFile('logo')) {
 
-            // Hapus gambar lama dari Cloudinary (jika ada)
+            // Hapus logo lama dari Cloudinary (jika ada)
             if ($brand->image_public_id) {
-                Storage::disk('cloudinary')->delete($brand->image_public_id);
+                Cloudinary::uploadApi()->destroy($brand->image_public_id);
             }
 
-            // Upload gambar baru
-            $path = Storage::disk('cloudinary')->put(
-                'brands',
-                $request->file('logo')
+            // Upload logo baru
+            $uploadedFile = Cloudinary::uploadApi()->upload(
+                $request->file('logo')->getRealPath(),
+                [
+                    'folder' => 'brands'
+                ]
             );
 
-            $validated['logo'] = $path;
-            $validated['image_public_id'] = $path;
+            $validated['logo'] = $uploadedFile['secure_url'];
+            $validated['image_public_id'] = $uploadedFile['public_id'];
         }
 
         // Update data brand
@@ -104,10 +109,8 @@ class BrandController extends Controller
     {
 
         // Jika image ada, maka hapus
-        if ($brand->logo) {
-            if (Storage::disk('public')->exists($brand->logo)) {
-                Storage::disk('public')->delete($brand->logo);
-            }
+        if ($brand->image_public_id) {
+            Cloudinary::uploadApi()->destroy($brand->image_public_id);
         }
 
         $brand->delete();

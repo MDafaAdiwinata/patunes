@@ -10,7 +10,8 @@
                 <div class="flex items-center justify-start mx-auto w-full lg:w-4/5">
                     <a href="/katalog"
                         class="p-2 font-semibold text-[#151515] rounded-2xl bg-[#eee] hover:bg-[#ddd] border border-black/10 hover:border-black/30 transition duration-300 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="size-6 md:size-8 -rotate-90 text-[#2a2a2a]" viewBox="0 0 24 24">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="size-6 md:size-8 -rotate-90 text-[#2a2a2a]"
+                            viewBox="0 0 24 24">
                             <path fill="currentColor"
                                 d="M12.884 5.116a1.253 1.253 0 0 0-1.768 0l-5 5a1.25 1.25 0 0 0 1.768 1.768l2.866-2.866V18a1.25 1.25 0 1 0 2.5 0V9.018l2.866 2.866a1.25 1.25 0 1 0 1.768-1.768z" />
                         </svg>
@@ -24,7 +25,8 @@
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 xl:gap-4 items-center justify-center">
                 <div class="flex items-center justify-center mx-auto w-full">
-                    <img src="/images/noimage.png" class="w-full lg:w-4/5" alt="">
+                    <img src="{{ $product->gambar }}"
+                        class="w-full lg:w-4/5" alt="">
                 </div>
                 <div class="flex flex-col items-start justify-start gap-2 h-full py-0 sm:py-8 mt-12 lg:mt-0 px-2 md:px-0">
                     <div class="flex flex-row items-center justify-between w-full">
