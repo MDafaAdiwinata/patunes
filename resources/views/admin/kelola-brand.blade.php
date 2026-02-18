@@ -1,8 +1,7 @@
 <x-app-layout>
     <section id="keloa-brand">
         <div class="container mx-auto px-6 md:px-0 py-6 sm:py-12 pb-24">
-            <div
-                class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-0 w-full border">
+            <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-0 w-full">
                 <h1 class="text-lg sm:text-xl lg:text-2xl text-[#151515] font-semibold">
                     Kelola Data Brand
                 </h1>
@@ -63,10 +62,7 @@
                             @forelse ($brands as $brand)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#151515]/80">
-                                        <img src="{{ $brand->logo
-                                            ? 'https://res.cloudinary.com/dpur2sebv/image/upload/' . $brand->logo
-                                            : 'https://res.cloudinary.com/dpur2sebv/image/upload/v1771304190/noimage_a4ur8u.png' }}"
-                                            class="w-28 mx-auto" alt="{{ $brand->nama }}">
+                                        <img src="{{ $brand->logo }}" class="w-28 mx-auto" alt="{{ $brand->nama }}">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">
                                         {{ $brand->nama }}
@@ -75,7 +71,7 @@
                                         {{ $brand->tagline }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">
-                                        {{ $brand->deskripsi }}
+                                        {{ Str::words($brand->deskripsi, 5, '...') }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">
                                         {{ $brand->url }}
@@ -101,7 +97,7 @@
                                 <tr>
                                     <td colspan="7"
                                         class="px-6 py-8 text-center text-base font-light text-[#151515]/80">
-                                        Maaf, data kategori belum tersedia.
+                                        Maaf, data brand belum tersedia.
                                     </td>
                                 </tr>
                             @endforelse

@@ -16,7 +16,7 @@ class BrandSeeder extends Seeder
                 'nama' => 'Compass',
                 'tagline' => 'Local Pride',
                 'deskripsi' => 'Brand sepatu lokal asal Bandung',
-                'logo' => 'compass.png',
+                'logo' => 'https://images.tokopedia.net/blog-tokopedia-com/uploads/2021/11/Featured_Profil-Kahar-Gunawan-Pemilik-Sepatu-Compass.jpg',
                 'url' => 'https://compass.co.id'
             ],
             [

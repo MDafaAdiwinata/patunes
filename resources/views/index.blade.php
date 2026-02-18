@@ -21,13 +21,12 @@
             @forelse ($brands as $brand)
                 <div class="flex flex-col rounded-2xl p-4 md:p-6 bg-[#fff] border border-black/10">
                     <div class="flex items-center gap-x-4">
-                        <img class="rounded-full size-20"
-                            src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
-                            alt="Avatar">
+                        <img class="rounded-full size-16" src="{{ $brand->logo }}" alt="Avatar">
                         <div class="grow">
-                            <h3 class="font-semibold text-lg md:text-xl text-[#000]">
+                            <a href="{{ $brand->url }}"
+                                class="hover:underline font-semibold text-lg md:text-xl text-[#000]" target="_blank">
                                 {{ $brand->nama }}
-                            </h3>
+                            </a>
                             <p class="text-base md:text-lg text-[#2a2a2a]/80">
                                 {{ $brand->tagline }}
                             </p>
@@ -35,16 +34,16 @@
                     </div>
 
                     <p class="mt-4 text-[#2a2a2a]/60 text-base md:text-lg">
-                        {{ $brand->deskripsi }}
+                        {{ Str::words($brand->deskripsi, 20, '...') }}
                     </p>
                 </div>
 
             @empty
-                <p class="text-center text-lg font-light py-2">
-                    Tidak ada bank yang tersedia saat ini.
-                </p>
-            @endforelse
         </div>
+        <p class="text-center text-lg font-light">
+            Tidak ada brand yang tersedia saat ini.
+        </p>
+        @endforelse
     </div>
 
     {{-- Card Product --}}
@@ -54,7 +53,7 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             @forelse ($products as $product)
                 <div class="group flex flex-col h-full bg-white border border-black/10 shadow-2xs rounded-xl">
-                    <img src="https://images.unsplash.com/photo-1595309849731-f7ce86eda9fc?q=80&w=1583&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    <img src="{{ $product->gambar }}"
                         class="w-full h-40 md:h-60 object-cover flex flex-col justify-center items-center rounded-t-xl" />
                     <div class="p-4 md:p-6">
                         <span class="block mb-1 text-base md:text-lg font-semibold text-[#3977db]">
@@ -64,23 +63,23 @@
                             {{ $product->nama }}
                         </h3>
                         <p class="mt-3 text-[#2a2a2a]/80 font-light">
-                            {{ $product->deskripsi }}
+                            {{ Str::words($product->deskripsi, 20, '...') }}
                         </p>
                     </div>
                     <div class="mt-auto flex border-t border-[#2a2a2a]/10">
                         <a class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm md:text-base font-medium rounded-b-xl bg-white text-gray-800 shadow-2xs hover:bg-[#ebf7ff] transition duration-300 focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none"
-                            href="#">
+                            href="{{ route('katalog.detail', $product) }}">
                             Lihat
                         </a>
                     </div>
                 </div>
 
             @empty
-                <p class="text-center text-lg font-light py-2">
-                    Tidak ada bank yang tersedia saat ini.
-                </p>
-            @endforelse
         </div>
+        <p class="text-center text-lg font-light">
+            Tidak ada Produk yang tersedia saat ini.
+        </p>
+        @endforelse
     </div>
 
     {{-- Keunggulan --}}

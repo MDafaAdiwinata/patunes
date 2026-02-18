@@ -57,7 +57,7 @@
                                         {{ $kategori->nama }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">
-                                        {{ $kategori->deskripsi }}
+                                        {{ Str::words($kategori->deskripsi, 5, '...') }}
                                     </td>
                                     <td class="px-6 py-4 flex flex-col justify-end lg:flex-row gap-2 text-end">
 

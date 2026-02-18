@@ -6,6 +6,7 @@ use App\Models\Brand;
 use App\Models\Kategori;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -37,7 +38,6 @@ class ProductController extends Controller
                     ->orWhere('harga', 'like', '%' . $request->search . '%');
             });
         }
-
 
         // Filter kategori
         if ($request->filled('kategori')) {
@@ -90,12 +90,15 @@ class ProductController extends Controller
         // Upload ke Cloudinary
         if ($request->hasFile('gambar')) {
 
-            $path = Storage::disk('cloudinary')->put(
-                'products',
-                $request->file('gambar')
+            $uploadedFile = Cloudinary::uploadApi()->upload(
+                $request->file('gambar')->getRealPath(),
+                [
+                    'folder' => 'products-patunes'
+                ]
             );
 
-            $validated['gambar'] = $path;
+            $validated['gambar'] = $uploadedFile['secure_url'];
+            $validated['image_public_id'] = $uploadedFile['public_id'];
         }
 
         Product::create($validated);
@@ -116,20 +119,24 @@ class ProductController extends Controller
             'id_kategori' => 'required|exists:kategori,id_kategori',
         ]);
 
+        // Jika upload logo baru
         if ($request->hasFile('gambar')) {
 
-            // Hapus gambar lama dari Cloudinary
-            if ($product->gambar) {
-                Storage::disk('cloudinary')->delete($product->gambar);
+            // Hapus logo lama dari Cloudinary (jika ada)
+            if ($product->image_public_id) {
+                Cloudinary::uploadApi()->destroy($product->image_public_id);
             }
 
-            // Upload gambar baru
-            $path = Storage::disk('cloudinary')->put(
-                'products',
-                $request->file('gambar')
+            // Upload logo baru
+            $uploadedFile = Cloudinary::uploadApi()->upload(
+                $request->file('gambar')->getRealPath(),
+                [
+                    'folder' => 'products-patunes'
+                ]
             );
 
-            $validated['gambar'] = $path;
+            $validated['gambar'] = $uploadedFile['secure_url'];
+            $validated['image_public_id'] = $uploadedFile['public_id'];
         }
 
         $product->update($validated);
@@ -141,9 +148,8 @@ class ProductController extends Controller
 
     public function destroy(Product $product)
     {
-        // Hapus gambar dari Cloudinary
-        if ($product->gambar) {
-            Storage::disk('cloudinary')->delete($product->gambar);
+        if ($product->image_public_id) {
+            Cloudinary::uploadApi()->destroy($product->image_public_id);
         }
 
         $product->delete();

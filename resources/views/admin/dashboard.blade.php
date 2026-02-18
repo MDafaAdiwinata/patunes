@@ -156,9 +156,7 @@
                                 @foreach ($products as $product)
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#151515]/80">
-                                            <img src="{{ $product->gambar
-                                                ? 'https://res.cloudinary.com/dpur2sebv/image/upload/' . $product->gambar
-                                                : 'https://res.cloudinary.com/dpur2sebv/image/upload/v1771304190/noimage_a4ur8u.png' }}"
+                                            <img src="{{ $product->gambar }}"
                                                 class="w-28 mx-auto" alt="{{ $product->nama }}">
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-[#151515]/80">

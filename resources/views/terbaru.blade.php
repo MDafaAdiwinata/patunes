@@ -12,9 +12,8 @@
 
                 @forelse ($products as $product)
                     <!-- Card -->
-                    <div class="relative bg-white border border-black/10 rounded-xl md:rounded-2xl">
-                        <img class="w-full h-96 object-cover rounded-xl md:rounded-2xl"
-                            src="https://images.unsplash.com/photo-1496579538151-212636d0b01c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <div class="relative bg-white border border-black/10 rounded-xl md:rounded-2xl w-[600px]">
+                        <img class="w-full h-96 object-cover rounded-xl md:rounded-2xl" src="{{ $product->gambar }}">
                         <div class="absolute top-0 start-0 end-0">
                             <div class="p-6">
                                 <h3 class="font-semibold text-[#2a2a2a] text-lg md:text-xl">
@@ -27,15 +26,16 @@
                         </div>
                     </div>
                 @empty
-                    <p class="text-center text-lg font-light py-2">
-                        Tidak ada bank yang tersedia saat ini.
-                    </p>
-                @endforelse
             </div>
-            <a href="/katalog"
-                class="text-[#151515]/80 text-base md:text-lg hover:underline font-light text-center mt-12">Lihat lebih
-                banyak..</a>
+            <p class="text-center text-lg font-light py-2">
+                Tidak ada Data Produk Terbaru yang tersedia saat ini.
+            </p>
+            @endforelse
+            <a href="/katalog" class="text-[#151515]/80 text-base md:text-lg hover:underline font-light text-center mt-12">Lihat
+            lebih
+            banyak..</a>
         </div>
+        
     </section>
 
     {{-- Cta --}}

@@ -15,13 +15,16 @@
                         <div
                             class="h-[400px] md:h-[700px] lg:h-[800px] flex flex-col bg-[url('https://images.unsplash.com/photo-1485736231968-0c8ad5c9e174?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-no-repeat">
                             <div class="mt-auto w-2/3 md:max-w-xl ps-6 pb-6 md:ps-16 md:pb-16">
-                                <span class="block text-white font-semibold md:text-lg">Brand Sepatu</span>
-                                <span class="block text-white font-normal text-xl md:text-3xl lg:text-4xl">Nama
-                                    Sepatu</span>
+                                <span class="block text-white font-semibold md:text-lg">
+                                    Ventela
+                                </span>
+                                <span class="block text-white font-normal text-xl md:text-3xl lg:text-4xl">
+                                    Ventela Public High
+                                </span>
                                 <div class="mt-3 md:mt-6">
                                     <a class="py-2 px-4 inline-flex items-center gap-x-2 text-sm md:text-base font-semibold rounded-xl bg-[#607896] text-[#f0f0f0] hover:bg-[#7691b3] transition duration-300 focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none"
-                                        href="#">
-                                        Beli Sekarang!
+                                        href="/katalog">
+                                        Lihat Selengkapnya
                                     </a>
                                 </div>
                             </div>
@@ -34,13 +37,14 @@
                         <div
                             class="h-[400px] md:h-[700px] lg:h-[800px]  flex flex-col bg-[url('https://images.unsplash.com/photo-1577106438705-a119a007f119?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-no-repeat">
                             <div class="mt-auto w-2/3 md:max-w-xl ps-6 pb-6 md:ps-16 md:pb-16">
-                                <span class="block text-white font-semibold md:text-lg">Brand Sepatu</span>
-                                <span class="block text-white font-normal text-xl md:text-3xl lg:text-4xl">Nama
-                                    Sepatu</span>
+                                <span class="block text-white font-semibold md:text-lg">Compass®</span>
+                                <span class="block text-white font-normal text-xl md:text-3xl lg:text-4xl">
+                                    Compass
+                                    Retrograde</span>
                                 <div class="mt-3 md:mt-6">
                                     <a class="py-2 px-4 inline-flex items-center gap-x-2 text-sm md:text-base font-semibold rounded-xl bg-[#607896] text-[#f0f0f0] hover:bg-[#7691b3] transition duration-300 focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none"
-                                        href="#">
-                                        Beli Sekarang!
+                                        href="/katalog">
+                                        Lihat Selengkapnya
                                     </a>
                                 </div>
                             </div>
@@ -53,13 +57,16 @@
                         <div
                             class="h-[400px] md:h-[700px] lg:h-[800px]  flex flex-col bg-[url('https://images.unsplash.com/photo-1615016254516-382f5c81e108?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-no-repeat">
                             <div class="mt-auto w-2/3 md:max-w-xl ps-6 pb-6 md:ps-16 md:pb-16">
-                                <span class="block text-white font-semibold md:text-lg">Brand Sepatu</span>
-                                <span class="block text-white font-normal text-xl md:text-3xl lg:text-4xl">Nama
-                                    Sepatu</span>
+                                <span class="block text-white font-semibold md:text-lg">
+                                    Ardiles
+                                </span>
+                                <span class="block text-white font-normal text-xl md:text-3xl lg:text-4xl">
+                                    Ardiles Nfinity Burst
+                                </span>
                                 <div class="mt-3 md:mt-6">
                                     <a class="py-2 px-4 inline-flex items-center gap-x-2 text-sm md:text-base font-semibold rounded-xl bg-[#607896] text-[#f0f0f0] hover:bg-[#7691b3] transition duration-300 focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none"
-                                        href="#">
-                                        Beli Sekarang!
+                                        href="/katalog">
+                                        Lihat Selengkapnya
                                     </a>
                                 </div>
                             </div>

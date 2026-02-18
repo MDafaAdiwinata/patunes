@@ -20,7 +20,7 @@
         <hr class="w-full border border-black/5 mt-6 sm:mt-2 mb-8 md:mb-12">
         <div class="flex flex-col" x-data="{
             imageUrl: '{{ $product->gambar
-                ? 'https://res.cloudinary.com/dpur2sebv/image/upload/' . $product->gambar
+                ? $product->gambar
                 : asset('/images/noimage.png') }}'
         }">
             <form enctype="multipart/form-data" action="{{ route('admin.product.update', $product) }}" method="POST"
