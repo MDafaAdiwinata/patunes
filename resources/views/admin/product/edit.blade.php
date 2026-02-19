@@ -19,9 +19,7 @@
 
         <hr class="w-full border border-black/5 mt-6 sm:mt-2 mb-8 md:mb-12">
         <div class="flex flex-col" x-data="{
-            imageUrl: '{{ $product->gambar
-                ? $product->gambar
-                : asset('/images/noimage.png') }}'
+            imageUrl: '{{ $product->images ?? asset('images/noimage.png') }}'
         }">
             <form enctype="multipart/form-data" action="{{ route('admin.product.update', $product) }}" method="POST"
                 class="flex flex-col md:flex-row gap-8 md:gap-12">
