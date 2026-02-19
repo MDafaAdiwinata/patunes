@@ -5,7 +5,7 @@
             <!-- Logo -->
             <div class="flex items-center">
                 <a href="{{ route('dashboard') }}" class="flex items-center gap-2">
-                    <img src="/images/logo.webp" class="w-8" alt="Logo Patunes">
+                    <img src={{ asset('images/logo.webp') }} class="w-8" alt="Logo Patunes">
                     <span class="font-fugaz text-xl font-bold">Patunes</span>
                 </a>
             </div>
