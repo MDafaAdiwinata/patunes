@@ -8,7 +8,7 @@
     <title>Patunes</title>
 
     {{-- Website Logo --}}
-    <link rel="icon" type="image/png" href="/images/logo-light.webp" />
+    <link rel="icon" type="image/png" href={{ asset('images/logo-light.webp') }} />
 
     <!--  Jakarta Sans Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,8 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
 
     {{-- Styles --}}
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
 
