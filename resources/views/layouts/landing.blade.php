@@ -8,7 +8,7 @@
     <title>Patunes</title>
 
     {{-- Website Logo --}}
-    <link rel="icon" type="image/png" href="/images/logo-light.webp" />
+    <link rel="icon" type="image/png" href="{{ asset('images/logo-light.webp') }}" />
 
     <!--  Jakarta Sans Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

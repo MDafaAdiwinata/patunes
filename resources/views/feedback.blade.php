@@ -15,7 +15,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 ">
                 <!-- Informasi Kontak -->
                 <div class="flex items-center justify-center">
-                    <img src="/images/mail.png" class="" alt="">
+                    <img src="{{ asset('images/mail.png') }}" class="" alt="">
                 </div>
 
                 <!-- Form Kontak -->
