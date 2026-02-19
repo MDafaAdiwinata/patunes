@@ -32,10 +32,6 @@
             </p>
             @endforelse
         </div>
-        <a href="/katalog" class="text-[#151515]/80 text-base md:text-lg hover:underline font-light text-center mt-12">Lihat
-        lebih
-        banyak..</a>
-        
     </section>
 
     {{-- Cta --}}
