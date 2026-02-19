@@ -4,7 +4,7 @@
 
 ## Deskripsi Proyek
 
-Website **Katalog Produk Sepatu Lokal Indonesia POFIN (Sepatu Indonesia)** adalah Website yang dirancang untuk membantu pengguna mencari, membandingkan produk sepatu lokal indonesia pada berbagai brand sepatu yang ada di Indonesia. 
+Website **Katalog Produk Sepatu Lokal Indonesia Patunes (Sepatu Indonesia)** adalah Website yang dirancang untuk membantu pengguna mencari, membandingkan produk sepatu lokal indonesia pada berbagai brand sepatu yang ada di Indonesia. 
 
 Aplikasi ini menyediakan fitur daftar seluruh produk, hingga pencarian produk sepatu. Aplikasi ini dibangun menggunakan framework **Laravel** dengan pendekatan modern dan antarmuka yang responsif.
 
@@ -33,9 +33,6 @@ Aplikasi ini menyediakan fitur daftar seluruh produk, hingga pencarian produk se
 * **Tailwind CSS**
 * **Alpine.js**
 
-<!-- ### Library Tambahan
-* **Laravel Markable** (Fitur Wishlist Produk) -->
-
 ### Database & Server
 * **MySQL**
 * **XAMPP**
@@ -50,11 +47,12 @@ Aplikasi ini menyediakan fitur daftar seluruh produk, hingga pencarian produk se
 
 ## Fitur Autentikasi
 
-<!-- ### User
+### User
 
 * Registrasi akun user
 * Login user
-* Logout -->
+* Wishlist Product (Sepatu)
+* Logout
 
 ### Admin
 * Login admin
@@ -75,7 +73,6 @@ Dashboard admin berfungsi untuk pengelolaan data sistem secara menyeluruh, melip
 * **CRUD Brand** (Create, Read, Update, Delete)
 * **CRUD Kategori**
 * **CRUD Produk**
-<!-- * **CRUD User** -->
 
 ---
 
