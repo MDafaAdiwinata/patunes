@@ -9,19 +9,19 @@
                         class="hs-carousel-body flex flex-nowrap absolute top-0 bottom-0 start-0 transition-transform duration-700 opacity-0">
                         <div class="hs-carousel-slide">
                             <div class="flex justify-center h-full">
-                                <img src="/images/iklan3.png" class="w-full h-full object-cover rounded-2xl"
+                                <img src={{ asset('images/iklan3.png') }} class="w-full h-full object-cover rounded-2xl"
                                     alt="Iklan">
                             </div>
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-center h-full">
-                                <img src="/images/iklan2.png" class="w-full h-full object-cover rounded-2xl"
+                                <img src={{ asset('images/iklan2.png') }} class="w-full h-full object-cover rounded-2xl"
                                     alt="Iklan">
                             </div>
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-center h-full">
-                                <img src="/images/iklan1.png" class="w-full h-full object-cover rounded-2xl"
+                                <img src={{ asset('images/iklan1.png') }} class="w-full h-full object-cover rounded-2xl"
                                     alt="Iklan">
                             </div>
                         </div>
@@ -59,21 +59,18 @@
 
                 {{-- Not Available Card/Alert --}}
                 <div class="flex flex-col w-full items-center justify-center border border-black/20 rounded-2xl mb-6">
-                <div class="py-20">
-                    <p class="text-black/80 text-base md:text-lg">
-                        Kamu belum menambahkan wishlist, tambahin yukk
-                    </p>
-                    <a href="/user/user-katalog"
-                        class="w-fit mx-auto px-4 py-2 text-sm lg:text-base font-semibold text-[#f0f0f0] rounded-xl bg-[#5483aa] hover:bg-[#457499] transition duration-300 flex items-center justify-center mt-4">
-                        Wishlist
-                    </a>
+                    <div class="py-20">
+                        <p class="text-black/80 text-base md:text-lg">
+                            Kamu belum menambahkan wishlist, tambahin yukk
+                        </p>
+                        <a href="/user/user-katalog"
+                            class="w-fit mx-auto px-4 py-2 text-sm lg:text-base font-semibold text-[#f0f0f0] rounded-xl bg-[#5483aa] hover:bg-[#457499] transition duration-300 flex items-center justify-center mt-4">
+                            Wishlist
+                        </a>
+                    </div>
                 </div>
-            </div>
                 @endforelse
             </div>
-            <a href="/user/wishlist"
-                class="text-[#151515]/80 text-base hover:underline font-light text-center mt-6">Lihat lebih
-                banyak..</a>
         </div>
     </section>
 </x-app-layout>
