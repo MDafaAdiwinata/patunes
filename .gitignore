@@ -21,3 +21,7 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+.vercel
+/storage/logs
+/storage/framework
+/storage/app
