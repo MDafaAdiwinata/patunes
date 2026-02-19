@@ -2,7 +2,7 @@
     <div class="mx-auto w-full container px-10 py-10">
         <div class="sm:flex sm:items-center sm:justify-between">
             <a href="/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                <img src="/images/logo-light.webp" class="h-8" alt="Patunes Logo" />
+                <img src={{ asset('images/logo-light.webp') }} class="h-8" alt="Patunes Logo" />
                 <span class="self-center font-fugaz text-2xl text-white mt-1">Patunes</span>
             </a>
             <ul class="flex flex-wrap items-center mb-6 text-sm md:text-base font-light text-[#f0f0f0]/80 sm:mb-0">

@@ -18,7 +18,7 @@
         </div>
 
         <hr class="w-full border border-black/5 mt-6 sm:mt-2 mb-8 md:mb-12">
-        <div class="flex flex-col" x-data="{ imageUrl: '/images/noimage.png' }">
+        <div class="flex flex-col" x-data="{ imageUrl: '{{ asset('images/noimage.png') }}' }">
             <form enctype="multipart/form-data" action="{{ route('brand.store') }}" method="POST"
                 class="flex flex-col md:flex-row gap-8 md:gap-12">
                 @csrf

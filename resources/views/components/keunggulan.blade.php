@@ -1,7 +1,7 @@
 <div class="container px-6 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
     <div class="aspect-w-16 aspect-h-7">
         <img class="w-full h-[400px] md:h-[600px] object-cover rounded-xl md:rounded-2xl"
-            src="/images/img-keunggulan.webp" alt="Image Keunggulan Patunes">
+            src={{ asset('images/img-keunggulan.webp') }} alt="Image Keunggulan Patunes">
     </div>
 
     <!-- Grid -->
