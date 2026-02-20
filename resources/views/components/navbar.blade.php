@@ -6,7 +6,7 @@
             <!-- Logo -->
             <a class="flex text-xl items-center justify-start gap-2 md:gap-3 focus:outline-hidden focus:opacity-80"
                 href="/" aria-label="Preline">
-                <img src="{{ asset('images/logo-light.webp') }}" class="w-6 md:w-8" alt="">
+                <img src="{{ asset('images/logo.webp') }}" class="w-6 md:w-8" alt="">
                 <p class="font-fugaz mt-1">Patunes</p>
             </a>
         </div>
