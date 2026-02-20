@@ -11,7 +11,7 @@
                 </p>
 
                 <div class="flex flex-col md:flex-row items-center gap-2 md:gap-3 pt-8">
-                    <img src={{ asset('images/pelanggan-1.png') }} alt="" class="w-10 md:w-12 rounded-full">
+                    <img src="{{ asset('images/pelanggan-1.png') }}" alt="" class="w-10 md:w-12 rounded-full">
                     <span class="font-semibold text-lg md:text-xl text-[#F6F6F8]">
                         Alba Maps
                     </span>
@@ -26,7 +26,7 @@
                 </p>
 
                 <div class="flex flex-col md:flex-row items-center gap-2 md:gap-3 pt-8">
-                    <img src={{ asset('images/pelanggan-2.png') }} alt="" class="w-10 md:w-12 rounded-full">
+                    <img src=""{{ asset('images/pelanggan-2.png') }}"" alt="" class="w-10 md:w-12 rounded-full">
                     <span class="font-semibold text-lg md:text-xl text-[#1a1a1a]">
                         Darell IEM
                     </span>
@@ -42,7 +42,7 @@
                 </p>
 
                 <div class="flex flex-col md:flex-row items-center gap-2 md:gap-3 pt-8">
-                    <img src={{ asset('images/pelanggan-3.png') }} alt="" class="w-10 md:w-12 rounded-full">
+                    <img src="{{ asset('images/pelanggan-3.png') }}" alt="" class="w-10 md:w-12 rounded-full">
                     <span class="font-semibold text-lg md:text-xl text-[#1a1a1a]">
                         Oppa Nabil
                     </span>
