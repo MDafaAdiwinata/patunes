@@ -16,7 +16,7 @@
                     <a href="/katalog" class="hover:underline me-4 md:me-6">Katalog</a>
                 </li>
                 <li>
-                    <a href="/kontak" class="hover:underline">Kontak</a>
+                    <a href="/feedback" class="hover:underline">Kontak</a>
                 </li>
             </ul>
         </div>
